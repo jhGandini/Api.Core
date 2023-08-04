@@ -12,6 +12,13 @@ Pacote de projetos padronizados para utilização na criação de API's
 **Ver:** Net6
 
 
+## Bind AppSettings
+Exemplo de bindo utilizado para carregar os configs utilizando appsettings
+
+```C#
+var info = new OpenApiInfo();
+builder.Configuration.Bind("swaggerInfo", info);  
+```
 ## Progetos
 
 - Serede.Core.Extensions
@@ -113,9 +120,24 @@ Configuração padrão de log baseado no appsettings
 ### SwaggerExtension
 #### ConfigureSwagger
 Cofiguração padrão de Swagger
+
+```json
+"swaggerInfo": {
+    "Contact": {
+      "Email": "",
+      "Name": "",
+      "Url": "http://teste.com.br"
+    },
+    "Description": "",
+    "Title": "",
+    "Version":  1
+  }
+```
+
 | Parâmetro   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
 | `info`      | `OpenApiInfo` | Default null |
+
 
 ### Settings
 Classes de configurações utilizadas pelas extenções 
