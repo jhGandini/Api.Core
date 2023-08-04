@@ -4,10 +4,10 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
 
-	<PackageId>Core.Test</PackageId>
-	<Version>1.0.2</Version>
+	<PackageId>Serede.CoreApi</PackageId>
+	<Version>1.0.0</Version>
 	<Authors>Henrique Gandini</Authors>
-	<Company>JHG Dev</Company>
+	<Company>Serede</Company>
 	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
