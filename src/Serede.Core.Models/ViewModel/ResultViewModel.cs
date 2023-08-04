@@ -47,7 +47,7 @@ public class ResultViewModel : Result
     }
 
     public ResultViewModel() { }
-    public ResultViewModel(object data){ }
-    public ResultViewModel(int count){ }
-    public ResultViewModel(object data, int count){ }
+    public ResultViewModel(object data) : base(data) { }
+    public ResultViewModel(int count): base(count) { }
+    public ResultViewModel(object data, int count): base(data,count){ }
 }
