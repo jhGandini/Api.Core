@@ -6,7 +6,7 @@ namespace Serede.CoreApi.Extensions;
 
 public static class AppSettingsExtension
 {
-    public static IConfigurationRoot ConfigureAppSettings(WebApplicationBuilder builder)
+    public static IConfigurationRoot ConfigureAppSettings(this WebApplicationBuilder builder)
     {
         return builder.Configuration.SetBasePath(builder.Environment.ContentRootPath)
             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
