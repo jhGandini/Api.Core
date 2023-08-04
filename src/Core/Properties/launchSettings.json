@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Serede.CoreApi": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "AspNetCore.CoreApi_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:53917;http://localhost:53918"
+    }
+  }
+}
