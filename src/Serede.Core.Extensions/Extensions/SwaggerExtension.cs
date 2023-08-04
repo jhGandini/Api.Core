@@ -11,13 +11,13 @@ public static class SwaggerExtension
             c.SwaggerDoc("v1",
                 new OpenApiInfo
                 {
-                    Title = info?.Title,
-                    Version = info?.Version,
-                    Description = info?.Description,
+                    Title = info?.Title == null ? "" : info?.Title,
+                    Version = info?.Version == null ? "" : info?.Version,
+                    Description = info?.Description == null ? "" : info?.Description,
                     Contact = new OpenApiContact
                     {
-                        Name = info?.Contact?.Name,
-                        Url = new Uri(info?.Contact?.Url.ToString())
+                        Name = info?.Contact?.Name == null ? "" : info?.Contact?.Name,
+                        Url = new Uri(info?.Contact?.Url.ToString() == null ? "" : info?.Contact?.Url.ToString())
                     }
                 }
             );
