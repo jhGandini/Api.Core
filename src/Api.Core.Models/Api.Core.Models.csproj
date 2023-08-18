@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
 
-	<PackageId>Serede.Core.Models</PackageId>
+	<PackageId>Api.Core.Models</PackageId>
 	<Version>1.0.1</Version>
 	<Authors>Henrique Gandini</Authors>
 	<Company>Serede</Company>

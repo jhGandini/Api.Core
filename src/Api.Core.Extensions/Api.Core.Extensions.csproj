@@ -3,7 +3,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
 
-	<PackageId>Serede.Core.Extensions</PackageId>
+	<PackageId>Api.Core.Extensions</PackageId>
 	<Version>1.0.0</Version>
 	<Authors>Henrique Gandini</Authors>
 	<Company>Serede</Company>

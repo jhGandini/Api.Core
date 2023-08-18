@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
 
-	<PackageId>Serede.Core.Data</PackageId>
+	<PackageId>Api.Core.Data</PackageId>
 	<Version>1.0.0</Version>
 	<Authors>Henrique Gandini</Authors>
 	<Company>Serede</Company>
