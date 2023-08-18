@@ -1,6 +1,5 @@
 ﻿using Api.Core.Models.Models;
 using Api.Core.Models.ViewModel;
-using Serede.Core.Data.ContextDb;
 
 namespace Api.Core.Data.Repositories;
 
