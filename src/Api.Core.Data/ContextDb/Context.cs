@@ -7,6 +7,11 @@ namespace Api.Core.Data.ContextDb;
 public abstract class Context : DbContext, IUnitOfWork
 {
     private readonly ILoggerFactory _loggerFactory;
+
+    protected Context(DbContextOptions options) : base(options)
+    {
+    }
+
     protected override void OnConfiguring(DbContextOptionsBuilder opt)
     {
         opt.UseLoggerFactory(_loggerFactory)
