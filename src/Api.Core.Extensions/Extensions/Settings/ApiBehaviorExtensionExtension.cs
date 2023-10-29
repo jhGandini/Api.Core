@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Api.Core.Extensions.Extensions;
+namespace Api.Core.Extensions.Extensions.Settings;
 
 public static class ApiBehaviorExtensionExtension
 {

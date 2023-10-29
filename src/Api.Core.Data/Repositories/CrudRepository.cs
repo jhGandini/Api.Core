@@ -1,4 +1,5 @@
 ﻿using Api.Core.Data.ContextDb;
+using Api.Core.Models.Interfaces;
 using Api.Core.Models.Models;
 using Api.Core.Models.ViewModel;
 using Microsoft.EntityFrameworkCore;
@@ -8,7 +9,7 @@ namespace Api.Core.Data.Repositories;
 
 public abstract class CrudRepository<T, S> : ICrudRepository<T, S>
         where T : Model
-        where S : Query
+        where S : BaseParams
 {
     protected readonly Context _context;
 

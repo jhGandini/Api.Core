@@ -2,7 +2,7 @@
 using Serilog;
 using Serilog.Exceptions;
 
-namespace Api.Core.Extensions.Extensions;
+namespace Api.Core.Extensions.Extensions.Logs;
 
 public static class SereilogExtension
 {

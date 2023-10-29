@@ -1,4 +1,5 @@
-﻿using Flunt.Notifications;
+﻿using Api.Core.Models.Interfaces;
+using Flunt.Notifications;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
@@ -29,7 +30,20 @@ public abstract class Context : DbContext, IUnitOfWork
         modelBuilder.Ignore<Notification>();
     }
 
-    public async Task<bool> Commit()
+    public bool Commit()
+    {
+        try
+        {
+            return base.SaveChanges() > 0;
+        }
+        catch
+        {
+            return false;
+        }
+
+    }
+
+    public async Task<bool> CommitAsync()
     {
         try
         {
@@ -39,6 +53,5 @@ public abstract class Context : DbContext, IUnitOfWork
         {
             return false;
         }
-
     }
 }

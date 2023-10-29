@@ -1,7 +1,7 @@
-﻿using Api.Core.Extensions.Settings;
+﻿using Api.Core.Extensions.Models;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Api.Core.Extensions.Extensions;
+namespace Api.Core.Extensions.Extensions.Auth;
 
 public static class AuthorizationExtensions
 {

@@ -1,4 +1,4 @@
-﻿namespace Api.Core.Extensions.Settings;
+﻿namespace Api.Core.Extensions.Models;
 public class IdentitySettings
 {
     public string IdentityServerUrl { get; set; }

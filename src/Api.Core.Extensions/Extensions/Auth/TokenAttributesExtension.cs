@@ -1,6 +1,6 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 
-namespace Api.Core.Extensions.Extensions;
+namespace Api.Core.Extensions.Extensions.Auth;
 
 public static class TokenAttributesExtension
 {

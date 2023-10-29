@@ -1,4 +1,4 @@
-﻿using Api.Core.Extensions.Settings;
+﻿using Api.Core.Extensions.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
@@ -6,7 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 
-namespace Api.Core.Extensions.Extensions;
+namespace Api.Core.Extensions.Extensions.Auth;
 
 public static class AuthenticationExtension
 {

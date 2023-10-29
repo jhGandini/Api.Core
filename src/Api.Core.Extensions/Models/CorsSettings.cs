@@ -1,4 +1,4 @@
-﻿namespace Api.Core.Extensions.Settings;
+﻿namespace Api.Core.Extensions.Models;
 public class CorsSettings
 {
     public string[] Origins { get; set; }

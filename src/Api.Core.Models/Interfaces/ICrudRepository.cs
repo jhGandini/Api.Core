@@ -1,11 +1,10 @@
 ﻿using Api.Core.Models.Models;
 using Api.Core.Models.ViewModel;
 
-namespace Api.Core.Data.Repositories;
-
-public interface ICrudRepository<T, S> : IRepository<T>, IDisposable
-        where T : Model
-        where S : Query
+namespace Api.Core.Models.Interfaces;
+public interface ICrudRepository<T, S> : IAggregateRepository<T>, IDisposable
+        where T : class
+        where S : BaseParams
 {
     void Adicionar(T entity);
     void Adicionar(List<T> entities);

@@ -1,4 +1,5 @@
 ﻿using Api.Core.Data.ContextDb;
+using Api.Core.Models.Interfaces;
 using Api.Core.Models.Models;
 using Api.Core.Models.ViewModel;
 using Microsoft.EntityFrameworkCore;
@@ -6,12 +7,12 @@ using System.Linq.Expressions;
 
 namespace Api.Core.Data.Repositories;
 
-public abstract class Repository<T> : IRepository<T> where T : Model
+public abstract class AggregateRepository<T> : IAggregateRepository<T> where T : class
 {
     protected readonly Context _context;
     protected readonly DbSet<T> _dbSet;
 
-    public Repository(Context context)
+    public AggregateRepository(Context context)
     {
         _context = context;
         _dbSet = _context.Set<T>();
@@ -22,7 +23,7 @@ public abstract class Repository<T> : IRepository<T> where T : Model
     protected IQueryable<T> Track(IQueryable<T> table, bool track) => !track ? table.AsNoTracking() : table;
     protected IQueryable<TM> Track<TM>(IQueryable<TM> table, bool track) where TM : Model => !track ? table.AsNoTracking() : table;
 
-    protected virtual IQueryable<T> Limit(Query sel, IQueryable<T> query)
+    protected virtual IQueryable<T> Limit(BaseParams sel, IQueryable<T> query)
     {
         if (!sel.Limit.Equals(0))
         {
@@ -32,7 +33,7 @@ public abstract class Repository<T> : IRepository<T> where T : Model
         return query;
     }
 
-    protected virtual IQueryable<TM> Limit<TM>(Query sel, IQueryable<TM> query) where TM : Model
+    protected virtual IQueryable<TM> Limit<TM>(BaseParams sel, IQueryable<TM> query) where TM : Model
     {
         if (!sel.Limit.Equals(0))
         {
@@ -42,7 +43,7 @@ public abstract class Repository<T> : IRepository<T> where T : Model
         return query;
     }
 
-    protected virtual IQueryable<TM> Order<TM>(Query seletor, IQueryable<TM> query) where TM : Model
+    protected virtual IQueryable<TM> Order<TM>(BaseParams seletor, IQueryable<TM> query) where TM : Model
     {
         if (!string.IsNullOrEmpty(seletor.OrderBy))
         {
@@ -66,7 +67,7 @@ public abstract class Repository<T> : IRepository<T> where T : Model
         return query;
     }
 
-    protected virtual IQueryable<T> Order(Query seletor, IQueryable<T> query)
+    protected virtual IQueryable<T> Order(BaseParams seletor, IQueryable<T> query)
     {
         if (!string.IsNullOrEmpty(seletor.OrderBy))
         {

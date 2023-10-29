@@ -1,9 +1,9 @@
-﻿using Api.Core.Extensions.Settings;
+﻿using Api.Core.Extensions.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Api.Core.Extensions.Extensions;
+namespace Api.Core.Extensions.Extensions.Cors;
 
 public static class CorsExtension
 {
