@@ -1,5 +1,6 @@
 ﻿using Api.Core.Data.ContextDb;
-using Api.Core.Models.Interfaces;
+using Api.Core.Models.Interfaces.Context;
+using Api.Core.Models.Interfaces.Repositories;
 using Api.Core.Models.Models;
 using Api.Core.Models.ViewModel;
 using Microsoft.EntityFrameworkCore;
@@ -20,8 +21,11 @@ public abstract class AggregateRepository<T> : IAggregateRepository<T> where T :
 
     public void Dispose() => _context?.Dispose();
     public IUnitOfWork UnitOfWork => _context;
-    protected IQueryable<T> Track(IQueryable<T> table, bool track) => !track ? table.AsNoTracking() : table;
-    protected IQueryable<TM> Track<TM>(IQueryable<TM> table, bool track) where TM : Model => !track ? table.AsNoTracking() : table;
+
+    public virtual void AttachModify(T entity) => _context.Attach(entity).State = EntityState.Modified;
+
+    protected virtual IQueryable<T> Track(IQueryable<T> table, bool track) => !track ? table.AsNoTracking() : table;
+    protected virtual IQueryable<TM> Track<TM>(IQueryable<TM> table, bool track) where TM : Model => !track ? table.AsNoTracking() : table;
 
     protected virtual IQueryable<T> Limit(BaseParams sel, IQueryable<T> query)
     {

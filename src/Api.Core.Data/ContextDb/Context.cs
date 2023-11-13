@@ -1,4 +1,4 @@
-﻿using Api.Core.Models.Interfaces;
+﻿using Api.Core.Models.Interfaces.Context;
 using Flunt.Notifications;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -13,13 +13,13 @@ public abstract class Context : DbContext, IUnitOfWork
     {
     }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder opt)
+    protected new virtual void OnConfiguring(DbContextOptionsBuilder opt)
     {
         opt.UseLoggerFactory(_loggerFactory)
             .EnableSensitiveDataLogging();
     }
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    protected new virtual void OnModelCreating(ModelBuilder modelBuilder)
     {
 
         foreach (var property in modelBuilder.Model.GetEntityTypes().SelectMany(
@@ -30,7 +30,7 @@ public abstract class Context : DbContext, IUnitOfWork
         modelBuilder.Ignore<Notification>();
     }
 
-    public bool Commit()
+    public virtual bool Commit()
     {
         try
         {
@@ -43,7 +43,7 @@ public abstract class Context : DbContext, IUnitOfWork
 
     }
 
-    public async Task<bool> CommitAsync()
+    public virtual async Task<bool> CommitAsync()
     {
         try
         {

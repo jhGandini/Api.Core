@@ -1,5 +1,6 @@
 ﻿using Api.Core.Data.ContextDb;
-using Api.Core.Models.Interfaces;
+using Api.Core.Models.Interfaces.Context;
+using Api.Core.Models.Interfaces.Repositories;
 using Api.Core.Models.Models;
 using Api.Core.Models.ViewModel;
 using Microsoft.EntityFrameworkCore;
