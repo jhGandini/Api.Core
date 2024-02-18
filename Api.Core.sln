@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Core.Web", "src\Api.Cor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Core.Data", "src\Api.Core.Data\Api.Core.Data.csproj", "{0D412CB7-52AE-4A47-8539-0F5CEE9CF249}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Core.Application", "src\Api.Core.Application\Api.Core.Application.csproj", "{A8D12934-99CA-41BA-8A55-11BDD64FAA95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Core.Application", "src\Api.Core.Application\Api.Core.Application.csproj", "{A8D12934-99CA-41BA-8A55-11BDD64FAA95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
